@@ -43,10 +43,26 @@ body{
   background:#fff;
   cursor:pointer;
 }
-.hamburger{
-  width:18px;
-  height:12px;
-  position:relative;
+  /* Logo Image Styling */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* Center align in header */
+  gap: 10px;  /* Agar text bhi ho toh space */
+}
+
+.brand-logo .logo {
+  height: 50px;   /* Desktop me height */
+  width: auto;    /* Aspect ratio maintain ho */
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .brand-logo .logo {
+    height: 40px;  /* Mobile ke liye thoda chhota */
+  }
+}
+  
 }
 .hamburger::before,
 .hamburger::after,
