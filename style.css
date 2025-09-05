@@ -1,0 +1,564 @@
+:root{
+  --cream:#E8E5D1;
+  --text:#3A0E13;
+  --ring:#5B1A1F;
+  --accent:#D84A3F;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:var(--cream);
+  color:var(--text);
+}
+
+/* Header */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:var(--cream);
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.header-inner{
+  max-width:1100px;
+  margin:0 auto;
+  padding:10px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.icon-btn{
+  height:40px;
+  width:40px;
+  display:inline-grid;
+  place-items:center;
+  border:1.5px solid var(--ring);
+  border-radius:9999px;
+  background:#fff;
+  cursor:pointer;
+}
+.hamburger{
+  width:18px;
+  height:12px;
+  position:relative;
+}
+.hamburger::before,
+.hamburger::after,
+.hamburger span{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  height:2px;
+  background:var(--ring);
+}
+.hamburger::before{top:0}
+.hamburger span{top:5px}
+.hamburger::after{bottom:0}
+
+.brand-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+  text-align: center;
+}
+.brand-top {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.brand-bottom {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.brand-bottom-text {
+  font-size: 18px;
+  color: gray;
+}
+.logo-small {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: var(--ring);
+}
+
+.actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+}
+.pill{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border:1.5px solid var(--ring);
+  border-radius:9999px;
+  background:#fff;
+  text-decoration:none;
+  color:inherit;
+  font-size:14px;
+}
+.svg{width:18px; height:18px; display:inline-block}
+
+@media (max-width:640px){
+  .brand-top{font-size:18px}
+  .brand-bottom-text{font-size:16px}
+  .pill span{display:none}
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+@media (max-width: 500px){
+  .products-grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+.product-card{
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+}
+.product-card img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f5f5f5;
+}
+.product-title{
+  margin: 10px 0 8px;
+  font-weight: bold;
+}
+.product-price{
+  color: var(--ring);
+  margin-bottom: 20px;
+}
+.add-to-cart{
+  padding: 8px 12px;
+  background: var(--ring);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Review Section with 9:16 Short Videos */
+.reviews-section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 16px;
+}
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 40px;
+  position: relative;
+}
+.section-title:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+}
+
+.reviews-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 15px 10px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.reviews-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.review-card {
+  flex: 0 0 auto;
+  width: 220px; /* Narrow width for 9:16 aspect ratio */
+  height: 390px; /* Height for 9:16 aspect ratio */
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  scroll-snap-align: start;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.review-card:hover {
+  transform: scale(1.03);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Full height of card */
+  overflow: hidden;
+}
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.review-card:hover .video-overlay {
+  opacity: 0.9;
+}
+
+.play-btn {
+  width: 50px;
+  height: 50px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.play-btn i {
+  font-size: 20px;
+  color: var(--ring);
+}
+
+/* Video duration indicator */
+.video-duration {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Profile indicator at top */
+.profile-indicator {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  font-size: 12px;
+}
+
+.profile-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  border: 2px solid white;
+}
+
+/* Hygienic Pani Puri Section */
+.pani-puri-section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.pani-puri-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pani-puri-image {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin: 20px auto;
+  display: block;
+  background: linear-gradient(45deg, #E8E5D1, #f9f8f3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5B1A1F;
+  font-weight: bold;
+}
+
+.highlight {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* Brand Story Section */
+.brand-story-section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 16px;
+}
+
+.brand-story-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+@media (min-width: 768px) {
+  .brand-story-content {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.brand-story-text {
+  flex: 1;
+}
+
+.brand-story-image {
+  flex: 1;
+  height: 300px;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #E8E5D1, #f9f8f3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5B1A1F;
+  font-weight: bold;
+}
+
+/* Fullscreen Video Modal */
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.video-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.modal-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.video-controls {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.control-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Instagram Follow Section */
+.instagram-section {
+  text-align: center;
+  padding: 40px 16px;
+  background: #fff;
+  margin: 60px 0 0;
+}
+.instagram-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.instagram-handle {
+  color: var(--accent);
+  font-weight: bold;
+}
+.follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #E1306C;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: transform 0.2s;
+}
+.follow-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.site-footer {
+  background: var(--text);
+  color: white;
+  padding: 40px 16px;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+.footer-col h3:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+}
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li {
+  margin-bottom: 12px;
+}
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: white;
+}
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.social-links a:hover {
+  background: var(--accent);
+}
+.copyright {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* Scroll Indicators */
+.scroll-hint {
+  text-align: center;
+  margin-top: 15px;
+  color: #666;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
