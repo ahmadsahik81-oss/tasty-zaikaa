@@ -6,670 +6,8 @@
     <meta name="theme-color" content="#0a2351">
     <meta name="description" content="IRAM Air Conditioner - Professional AC repair, service, installation & rental in Sambhal & Delhi NCR. 5000+ happy customers. 24/7 expert support.">
     <title>IRAM Air Conditioner | Professional AC Repair in Sambhal & Delhi NCR</title>
-    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #f5f8fe;
-            font-family: 'Segoe UI', 'Poppins', 'Roboto', system-ui, -apple-system, Helvetica, Arial, sans-serif;
-            color: #1a2c3e;
-            padding-bottom: 75px;
-        }
-
-        /* --- HEADER (Deep Blue + Gold) --- */
-        .main-header {
-            background: #0a2351;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 3px solid #d4af37;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-        }
-
-        .brand {
-            display: flex;
-            flex-direction: column;
-        }
-        .brand .logo {
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: white;
-            line-height: 1;
-        }
-        .brand .tag {
-            font-size: 9px;
-            font-weight: 600;
-            letter-spacing: 2.5px;
-            color: #d4af37;
-            margin-top: 4px;
-            text-transform: uppercase;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        .btn-outline-gold {
-            background: transparent;
-            border: 1.5px solid #d4af37;
-            color: #d4af37;
-            padding: 6px 14px;
-            border-radius: 40px;
-            font-weight: 700;
-            font-size: 12px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-        .btn-outline-gold:active {
-            background: rgba(212, 175, 55, 0.2);
-        }
-        .menu-icon {
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-        }
-
-        /* ===== HERO PAMPHLET STYLE ===== */
-        .hero-pamphlet {
-            position: relative;
-            width: 100%;
-            min-height: 85vh;
-            max-height: 90vh;
-            background-color: #071c3b;
-            overflow: hidden;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            min-height: 85vh;
-            max-height: 90vh;
-            object-position: center 30%;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(10, 35, 81, 0.7) 0%, rgba(0, 0, 0, 0.55) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 24px;
-            color: white;
-        }
-
-        .hero-overlay h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            text-shadow: 0 3px 10px rgba(0,0,0,0.5);
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-
-        .hero-overlay p {
-            font-size: 1rem;
-            max-width: 280px;
-            margin-bottom: 28px;
-            font-weight: 500;
-            text-shadow: 0 1px 4px rgba(0,0,0,0.4);
-        }
-
-        .btn-primary {
-            background: #d4af37;
-            color: #0a2351;
-            padding: 12px 32px;
-            border-radius: 50px;
-            font-weight: 800;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-            transition: 0.2s;
-            display: inline-block;
-        }
-        .btn-primary:active {
-            transform: scale(0.96);
-            background: #c5a12e;
-        }
-
-        /* --- SERVICE CARDS --- */
-        .section-title {
-            text-align: center;
-            margin: 36px 0 12px 0;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #0a2351;
-            position: relative;
-        }
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 65px;
-            height: 3px;
-            background: #d4af37;
-            margin: 12px auto 0;
-            border-radius: 4px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-            padding: 20px 20px 10px 20px;
-        }
-        .service-card {
-            background: white;
-            border-radius: 26px;
-            padding: 24px 12px;
-            text-align: center;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.25s ease;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            cursor: pointer;
-        }
-        .service-card:active {
-            transform: translateY(-4px);
-            box-shadow: 0 22px 32px rgba(0, 0, 0, 0.1);
-        }
-        .service-card i {
-            font-size: 40px;
-            color: #0a2351;
-            margin-bottom: 14px;
-            display: inline-block;
-        }
-        .service-card h4 {
-            font-size: 1.1rem;
-            font-weight: 800;
-            margin-bottom: 6px;
-        }
-        .service-card p {
-            font-size: 0.75rem;
-            color: #5f6c7a;
-        }
-
-        /* Stats Ribbon */
-        .stats-ribbon {
-            background: linear-gradient(115deg, #0a2351, #0f2e5e);
-            margin: 22px 20px 28px 20px;
-            padding: 18px 12px;
-            border-radius: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            box-shadow: 0 10px 22px rgba(0,0,0,0.1);
-        }
-        .stat-item {
-            text-align: center;
-            flex: 1;
-        }
-        .stat-number {
-            font-size: 1.6rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-        .stat-label {
-            font-size: 0.7rem;
-            opacity: 0.9;
-        }
-        .gold-icon {
-            color: #d4af37;
-            font-size: 1.8rem;
-        }
-
-        /* Assurance Badge */
-        .assurance-badge {
-            background: white;
-            margin: 5px 20px 35px 20px;
-            border-radius: 32px;
-            padding: 16px 20px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
-            border-left: 5px solid #d4af37;
-        }
-        .assurance-badge i {
-            font-size: 2.3rem;
-            color: #d4af37;
-        }
-        .assurance-text h4 {
-            font-size: 1rem;
-            font-weight: 800;
-            color: #0a2351;
-        }
-        .assurance-text p {
-            font-size: 0.75rem;
-            color: #4a5b6b;
-        }
-
-        /* ========== NEW FOOTER SECTION ========== */
-        .main-footer {
-            background: #0a1c3a;
-            color: #eef2ff;
-            margin-top: 30px;
-            border-top: 3px solid #d4af37;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 24px 32px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 32px;
-            margin-bottom: 36px;
-        }
-
-        @media (min-width: 640px) {
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (min-width: 960px) {
-            .footer-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .footer-address-col {
-                grid-column: span 1;
-            }
-        }
-
-        .footer-brand h3 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: white;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-        .footer-brand .gold-text {
-            color: #d4af37;
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-            margin-bottom: 16px;
-            display: inline-block;
-        }
-        .footer-brand p {
-            font-size: 0.85rem;
-            line-height: 1.5;
-            opacity: 0.85;
-            margin-bottom: 16px;
-        }
-
-        .footer-locations h4, .footer-socials h4 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #d4af37;
-            margin-bottom: 20px;
-            border-left: 3px solid #d4af37;
-            padding-left: 12px;
-        }
-
-        .location-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 18px;
-        }
-        .location-item i {
-            font-size: 1.2rem;
-            color: #d4af37;
-            margin-top: 2px;
-        }
-        .location-item .loc-detail {
-            font-size: 0.85rem;
-            line-height: 1.4;
-            font-weight: 500;
-        }
-        .loc-detail strong {
-            color: white;
-            font-weight: 700;
-        }
-
-        .social-icons-group {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 24px;
-        }
-        .social-icon-link {
-            background: rgba(255, 255, 255, 0.08);
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            border: 1px solid rgba(212, 175, 55, 0.4);
-        }
-        .social-icon-link i {
-            font-size: 24px;
-            color: #eef2ff;
-            transition: 0.2s;
-        }
-        .social-icon-link:hover {
-            background: #d4af37;
-            transform: scale(1.05);
-        }
-        .social-icon-link:hover i {
-            color: #0a2351;
-        }
-        .social-icon-link:active {
-            transform: scale(0.96);
-        }
-
-        .footer-contact-links {
-            margin-top: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .footer-contact-links a {
-            color: #eef2ff;
-            text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.2s;
-        }
-        .footer-contact-links a i {
-            color: #d4af37;
-            width: 20px;
-        }
-        .footer-contact-links a:active {
-            opacity: 0.7;
-        }
-
-        .copyright {
-            text-align: center;
-            border-top: 1px solid rgba(212, 175, 55, 0.25);
-            padding-top: 28px;
-            font-size: 0.75rem;
-            opacity: 0.7;
-            letter-spacing: 0.5px;
-        }
-
-        /* Fixed Action Footer (mobile bar) */
-        .fixed-action-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #ffffff;
-            display: flex;
-            height: 70px;
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
-            z-index: 200;
-        }
-        .action-btn {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1rem;
-            transition: 0.2s;
-        }
-        .action-call {
-            background: #0a2351;
-            color: white;
-        }
-        .action-wa {
-            background: #25D366;
-            color: white;
-        }
-        .action-btn:active {
-            filter: brightness(0.92);
-        }
-
-        /* Floating Customer Support Button */
-        .floating-support {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            z-index: 250;
-        }
-
-        .support-toggle {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #d4af37, #b8860b);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255,215,0,0.5);
-        }
-
-        .support-toggle i {
-            font-size: 28px;
-            color: #0a2351;
-        }
-
-        .support-toggle:active {
-            transform: scale(0.92);
-        }
-
-        .support-menu {
-            position: absolute;
-            bottom: 70px;
-            right: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            pointer-events: none;
-        }
-
-        .support-menu.open {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            pointer-events: all;
-        }
-
-        .support-item {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: all 0.2s ease;
-            border: 1px solid rgba(212,175,55,0.4);
-        }
-
-        .support-item:active {
-            transform: scale(0.9);
-        }
-
-        .support-item i {
-            font-size: 24px;
-        }
-
-        .support-item.call-item i { color: #0a2351; }
-        .support-item.whatsapp-item i { color: #25D366; }
-        .support-item.instagram-item i { color: #E4405F; }
-        .support-item.facebook-item i { color: #1877F2; }
-
-        .support-item::after {
-            content: attr(data-label);
-            position: absolute;
-            right: 55px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: #0a2351;
-            color: white;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 600;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: 0.2s;
-            pointer-events: none;
-        }
-
-        .support-item:active::after {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* MODAL & DRAWER */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.75);
-            z-index: 300;
-            backdrop-filter: blur(4px);
-            display: none;
-            align-items: center;
-            justify-content: center;
-        }
-        .modal-overlay.active {
-            display: flex;
-        }
-        .booking-modal {
-            background: white;
-            width: 86%;
-            max-width: 360px;
-            border-radius: 40px;
-            padding: 28px 22px 36px;
-            text-align: center;
-            box-shadow: 0 30px 40px rgba(0,0,0,0.3);
-        }
-        .booking-modal i {
-            font-size: 50px;
-            color: #d4af37;
-            margin-bottom: 12px;
-        }
-        .booking-modal h3 {
-            font-size: 1.7rem;
-            color: #0a2351;
-            margin-bottom: 8px;
-        }
-        .btn-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-            margin: 24px 0 8px;
-        }
-        .btn-call {
-            background: #0a2351;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-        }
-        .btn-wa-modal {
-            background: #25D366;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-        }
-        .btn-outline {
-            background: #f0f2f5;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-        .side-drawer {
-            position: fixed;
-            top: 0;
-            left: -280px;
-            width: 280px;
-            height: 100%;
-            background: #0a2351;
-            z-index: 400;
-            transition: left 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
-            padding: 30px 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            box-shadow: 4px 0 24px rgba(0,0,0,0.4);
-        }
-        .side-drawer.open {
-            left: 0;
-        }
-        .drawer-close {
-            align-self: flex-end;
-            background: none;
-            border: none;
-            color: #d4af37;
-            font-size: 28px;
-            cursor: pointer;
-        }
-        .side-drawer a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(212,175,55,0.3);
-        }
-        .side-drawer a i {
-            width: 28px;
-            margin-right: 12px;
-            color: #d4af37;
-        }
-
-        @media (max-width: 480px) {
-            .hero-overlay h1 { font-size: 2rem; }
-            .hero-pamphlet { min-height: 82vh; }
-            .hero-image { min-height: 82vh; }
-            .stat-number { font-size: 1.3rem; }
-            .floating-support { bottom: 95px; }
-            .support-item::after { display: none; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -684,7 +22,6 @@
     </div>
 </header>
 
-<!-- Hero Section -->
 <div class="hero-pamphlet">
     <img class="hero-image" 
          src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?auto=format&fit=crop&q=85&w=1000&h=1200" 
@@ -697,7 +34,109 @@
     </div>
 </div>
 
-<!-- Service Cards -->
+<section class="spotlight-section">
+    <h2 class="section-title-alt">In the spotlight</h2>
+    <div class="spotlight-slider">
+        <div class="slider-track" id="sliderTrack">
+            <div class="spotlight-card card-grey">
+                <div class="card-text">
+                    <h3>Deep clean with foam-jet AC service</h3>
+                    <p>AC service & repair</p>
+                    <button class="btn-spotlight-dark">Book now</button>
+                </div>
+                <div class="card-img">
+                    <img src="https://plus.unsplash.com/premium_photo-1663047249679-b197ec76249f?q=80&w=300" alt="AC Service">
+                </div>
+            </div>
+            <div class="spotlight-card card-dark">
+                <div class="card-text">
+                    <span class="launch-badge">New launch</span>
+                    <h3>revamp</h3>
+                    <p>Spring '26 Collection</p>
+                    <button class="btn-spotlight-light">Explore</button>
+                </div>
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1615873968403-89e068629275?q=80&w=300" alt="Revamp">
+                </div>
+            </div>
+        </div>
+        <div class="slider-indicators">
+            <span class="indicator active" onclick="currentSlide(0)"></span>
+            <span class="indicator" onclick="currentSlide(1)"></span>
+        </div>
+    </div>
+</section>
+
+<section class="service-selection">
+    <div class="section-container">
+        <h2 class="category-title">Repair & gas refill</h2>
+        
+        <div class="service-item-card">
+            <div class="service-info">
+                <h3 class="service-name">AC repair</h3>
+                <div class="service-rating">
+                    <i class="fas fa-star"></i> 4.74 (799K reviews)
+                </div>
+                <div class="service-price">Starts at ₹299</div>
+                <ul class="service-features">
+                    <li>Complete check-up to identify issues before repair</li>
+                </ul>
+                <a href="#" class="view-details">View details</a>
+            </div>
+            <div class="service-action">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=200" alt="AC Repair">
+                    <button class="btn-add-service" onclick="triggerBooking()">Add</button>
+                </div>
+                <span class="option-count">4 options</span>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="service-item-card">
+            <div class="service-info">
+                <h3 class="service-name">Gas refill & check-up</h3>
+                <div class="service-rating">
+                    <i class="fas fa-star"></i> 4.78 (115K reviews)
+                </div>
+                <div class="service-price">₹2,800 • 2 hrs 30 mins</div>
+                <a href="#" class="view-details">View details</a>
+            </div>
+            <div class="service-action">
+                <div class="img-container">
+                    <img src="https://plus.unsplash.com/premium_photo-1663047249679-b197ec76249f?q=80&w=200" alt="Gas Refill">
+                    <button class="btn-add-service" onclick="triggerBooking()">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="brands-strip">
+    <div class="brands-header">
+        <h3><i class="fas fa-briefcase"></i> Trusted by Leading Brands</h3>
+        <p>Authorized service partner for all major AC manufacturers</p>
+    </div>
+    <div class="brands-logos">
+        <div class="brand-logo-item"><i class="fas fa-wind"></i><span>Daikin</span></div>
+        <div class="brand-logo-item"><i class="fas fa-snowplow"></i><span>LG</span></div>
+        <div class="brand-logo-item"><i class="fas fa-microchip"></i><span>Samsung</span></div>
+        <div class="brand-logo-item"><i class="fas fa-industry"></i><span>Blue Star</span></div>
+        <div class="brand-logo-item"><i class="fas fa-charging-station"></i><span>Voltas</span></div>
+        <div class="brand-logo-item"><i class="fas fa-cloud-sun"></i><span>Hitachi</span></div>
+        <div class="brand-logo-item"><i class="fas fa-tachometer-alt"></i><span>Carrier</span></div>
+        <div class="brand-logo-item"><i class="fas fa-bolt"></i><span>Godrej</span></div>
+        <div class="brand-logo-item"><i class="fas fa-thermometer-half"></i><span>Mitsubishi</span></div>
+        <div class="brand-logo-item"><i class="fas fa-fan"></i><span>O General</span></div>
+        <div class="brand-logo-item"><i class="fas fa-snowflake"></i><span>Panasonic</span></div>
+        <div class="brand-logo-item"><i class="fas fa-cogs"></i><span>Haier</span></div>
+    </div>
+    <div class="brands-footer-note">
+        <i class="fas fa-check-circle"></i> <span>Certified technicians | Brand-specific expertise | Genuine spare parts</span>
+    </div>
+</div>
+
 <h2 class="section-title">Our Solutions</h2>
 <div class="services-grid">
     <div class="service-card" data-service="repair">
@@ -722,7 +161,6 @@
     </div>
 </div>
 
-<!-- Trust Statistics -->
 <div class="stats-ribbon">
     <div class="stat-item">
         <div class="stat-number">5000+</div>
@@ -744,7 +182,6 @@
     </div>
 </div>
 
-<!-- Assurance Badge -->
 <div class="assurance-badge">
     <i class="fas fa-certificate"></i>
     <div class="assurance-text">
@@ -753,7 +190,6 @@
     </div>
 </div>
 
-<!-- ========== NEW FOOTER SECTION WITH LOCATION & SOCIAL ICONS ========== -->
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-grid">
@@ -771,13 +207,6 @@
             <div class="footer-locations">
                 <h4><i class="fas fa-map-marker-alt" style="margin-right: 6px;"></i> Service Hubs</h4>
                 <div class="location-item">
-                    <i class="fas fa-city"></i>
-                    <div class="loc-detail">
-                        <strong>📍 Sambhal (HQ)</strong><br>
-                        Main Bazar Road, Near Kotwali, Sambhal, UP 244302
-                    </div>
-                </div>
-                <div class="location-item">
                     <i class="fas fa-building"></i>
                     <div class="loc-detail">
                         <strong>🏙️ Delhi NCR - Gurgaon</strong><br>
@@ -790,6 +219,13 @@
                     <div class="loc-detail">
                         <strong>📍 Noida Extension</strong><br>
                         Sector 121, Noida - 201301 (by appointment)
+                    </div>
+                </div>
+                <div class="location-item">
+                    <i class="fas fa-city"></i>
+                    <div class="loc-detail">
+                        <strong>📍 Sambhal Headquarters</strong><br>
+                        (Main service hub - Uttar Pradesh)
                     </div>
                 </div>
             </div>
@@ -810,22 +246,14 @@
                         <i class="fas fa-phone-alt"></i>
                     </a>
                 </div>
-                <div style="margin-top: 20px;">
-                    <p style="font-size: 0.8rem; margin-bottom: 12px;"><i class="fas fa-globe" style="color:#d4af37;"></i> We also serve in: Ghaziabad, Faridabad, Noida</p>
-                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                        <span style="background: rgba(212,175,55,0.2); padding: 4px 12px; border-radius: 30px; font-size: 0.7rem;">⭐ 24/7 Emergency</span>
-                        <span style="background: rgba(212,175,55,0.2); padding: 4px 12px; border-radius: 30px; font-size: 0.7rem;">🔧 Free Inspection</span>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="copyright">
-            © 2025 IRAM Air Conditioner | All Rights Reserved | AC Repair & Service Sambhal, Delhi, Gurgaon
+            © 2025 IRAM Air Conditioner | All Rights Reserved
         </div>
     </div>
 </footer>
 
-<!-- Fixed Action Footer -->
 <div class="fixed-action-bar">
     <a href="tel:+919368646875" class="action-btn action-call" id="callFooter">
         <i class="fas fa-phone-alt"></i> CALL NOW
@@ -835,7 +263,6 @@
     </a>
 </div>
 
-<!-- Floating Support Menu -->
 <div class="floating-support">
     <div class="support-menu" id="supportMenu">
         <a href="tel:+919368646875" class="support-item call-item" data-label="Call Us">
@@ -844,33 +271,24 @@
         <a href="https://wa.me/919368646875" target="_blank" class="support-item whatsapp-item" data-label="WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="https://www.instagram.com/iramacservice" target="_blank" class="support-item instagram-item" data-label="Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.facebook.com/iramacservice" target="_blank" class="support-item facebook-item" data-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
-        </a>
     </div>
     <div class="support-toggle" id="supportToggle">
         <i class="fas fa-headset"></i>
     </div>
 </div>
 
-<!-- Drawer & Modal -->
 <div class="side-drawer" id="sideDrawer">
     <button class="drawer-close" id="closeDrawerBtn"><i class="fas fa-times-circle"></i></button>
     <a href="#"><i class="fas fa-home"></i> Home</a>
     <a href="#" id="drawerServices"><i class="fas fa-wrench"></i> Services</a>
     <a href="#" id="drawerBooking"><i class="fas fa-calendar-check"></i> Book Appointment</a>
-    <a href="tel:+919368646875"><i class="fas fa-phone-alt"></i> Call Support</a>
-    <a href="https://wa.me/919368646875" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
 </div>
 
 <div class="modal-overlay" id="modalOverlay">
     <div class="booking-modal">
         <i class="fas fa-headset"></i>
         <h3>Instant Connect</h3>
-        <p>Speak to an AC expert now. Quick support in Sambhal & Delhi NCR.</p>
+        <p>Speak to an AC expert now.</p>
         <div class="btn-group">
             <button class="btn-call" id="modalCallBtn"><i class="fas fa-phone"></i> Call Now</button>
             <button class="btn-wa-modal" id="modalWABtn"><i class="fab fa-whatsapp"></i> WhatsApp</button>
@@ -879,89 +297,6 @@
     </div>
 </div>
 
-<script>
-    (function() {
-        const menuBtn = document.getElementById('menuToggleBtn');
-        const drawer = document.getElementById('sideDrawer');
-        const closeDrawerBtn = document.getElementById('closeDrawerBtn');
-        const modalOverlay = document.getElementById('modalOverlay');
-        const headerBookBtn = document.getElementById('headerBookBtn');
-        const heroCta = document.getElementById('heroCtaBtn');
-        const drawerBooking = document.getElementById('drawerBooking');
-        const drawerServicesLink = document.getElementById('drawerServices');
-        const modalCallBtn = document.getElementById('modalCallBtn');
-        const modalWABtn = document.getElementById('modalWABtn');
-        const modalCloseBtn = document.getElementById('modalCloseBtn');
-        const serviceCards = document.querySelectorAll('.service-card');
-        
-        const supportToggle = document.getElementById('supportToggle');
-        const supportMenu = document.getElementById('supportMenu');
-        
-        const phoneNumber = '+919368646875';
-        const whatsappUrl = 'https://wa.me/919368646875';
-        
-        let isMenuOpen = false;
-        function toggleSupportMenu() {
-            isMenuOpen = !isMenuOpen;
-            if(isMenuOpen) {
-                supportMenu.classList.add('open');
-            } else {
-                supportMenu.classList.remove('open');
-            }
-        }
-        
-        if(supportToggle) {
-            supportToggle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                toggleSupportMenu();
-            });
-        }
-        
-        document.addEventListener('click', function(e) {
-            if(isMenuOpen && !supportToggle.contains(e.target) && !supportMenu.contains(e.target)) {
-                isMenuOpen = false;
-                supportMenu.classList.remove('open');
-            }
-        });
-        
-        function openDrawer() { drawer.classList.add('open'); }
-        function closeDrawer() { drawer.classList.remove('open'); }
-        function openModal() {
-            modalOverlay.classList.add('active');
-            if(drawer.classList.contains('open')) closeDrawer();
-            document.body.style.overflow = 'hidden';
-        }
-        function closeModal() {
-            modalOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        function triggerBooking() { openModal(); }
-        
-        if(headerBookBtn) headerBookBtn.addEventListener('click', (e) => { e.preventDefault(); triggerBooking(); });
-        if(heroCta) heroCta.addEventListener('click', (e) => { e.preventDefault(); triggerBooking(); });
-        if(drawerBooking) drawerBooking.addEventListener('click', (e) => { e.preventDefault(); closeDrawer(); triggerBooking(); });
-        if(menuBtn) menuBtn.addEventListener('click', openDrawer);
-        if(closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
-        
-        document.addEventListener('click', function(e) {
-            if(drawer.classList.contains('open') && !drawer.contains(e.target) && !menuBtn.contains(e.target)) closeDrawer();
-        });
-        
-        serviceCards.forEach(card => { card.addEventListener('click', () => openModal()); });
-        
-        if(modalCallBtn) modalCallBtn.addEventListener('click', () => { window.location.href = `tel:${phoneNumber}`; closeModal(); });
-        if(modalWABtn) modalWABtn.addEventListener('click', () => { window.open(whatsappUrl, '_blank'); closeModal(); });
-        if(modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
-        if(modalOverlay) modalOverlay.addEventListener('click', (e) => { if(e.target === modalOverlay) closeModal(); });
-        
-        if(drawerServicesLink) {
-            drawerServicesLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                closeDrawer();
-                document.querySelector('.services-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        }
-    })();
-</script>
+<script src="script.js"></script>
 </body>
 </html>
